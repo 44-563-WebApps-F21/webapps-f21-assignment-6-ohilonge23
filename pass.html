@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>Pass phrase by Ohi Longe
+    <title>Obtaining Values</title>
+</head>
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="Password" class="form-control" aria-placeholder="Enter  your secret phrase" type="text">Enter the secret phrase</label>
+    <input type="password" class="form-control" id="Password" value="Let me in"> <br>
+
+    <label for="phrase">Enter a phrase</label>
+    <input type ="text" id="phrase" name="phrase" autofocus> <br>
+
+    <input type="button" onclick="processPhrase()" value="Check the phrase">
+</form>
+
+
+<p id="result">This is the result: </p>
+
+<script>
+    let correct = 0
+    let wrong = 0
+
+function processPhrase() {
+    passwordCheck = document.getElementById("Password").value
+    phraseCheck = document.getElementById("phrase").value
+    out = document.getElementById("result");
+    if(passwordCheck === phraseCheck){
+        correct += 1
+        out.innerHTML = correct
+        alert("Access allowed")
+    } else {
+        wrong += 1
+        out.innerHTML = wrong
+        alert("Access denied")
+    }
+}
+</script>
+
+</body>
+</html> 
