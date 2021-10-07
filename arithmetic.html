@@ -35,7 +35,7 @@
     <label for="divide">/</label></br>
 </form>
 
-<p id="Results">This text will be replaced </p>
+<p id="myResults">This text will be replaced </p>
 
 <script> 
 
@@ -51,6 +51,32 @@ function powers(){
 
     out = document.getElementById("resultCompile")
     out.innerHTML = "Powers of "+ thisBase + " are : " + result
+}
+
+function processRadio() {
+    console.log("Getting form values")
+    thisBase = document.getElementById("thisBsse").value
+    thisExponent = document.getElementById("thisExponent").value
+
+    plus = document.getElementById("plus").checked
+    minus = document.getElementById("minus").checked
+    times = document.getElementById("times").checked
+    divide = document.getElementById("divide").checked
+    result = 0
+
+    if(plus) {
+        result = Number(thisBase) + Number(thisExponent)
+    } else if(minus) {
+        result = thisBase - thisExponent
+    } else if(times) {
+        result = thisBase * thisExponent
+    }else if(divide) {
+        result = thisBase / thisExponent
+    }
+
+    out = document.getElementById("myResults")
+    out.innerHTML = "Result: "+ result
+
 }
 
 </script>
