@@ -37,6 +37,9 @@ function processPhrase() {
         out.innerHTML = wrong
         alert("Access denied")
     }
+    if(wrong >=3){
+        warningLock()
+    }
 }
 </script>
 
@@ -51,7 +54,7 @@ function processPhrase() {
 <script>
 
     function warningLock(){
-        warning("This account has been LOCKED")
+        warning("account locked")
         btn=document.getElementById("passBTN")
         btn.disabled = true
     }
