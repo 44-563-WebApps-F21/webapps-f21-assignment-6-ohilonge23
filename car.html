@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+ <title> Collection of data for a car sale</title>
+</head>
+<body>
+
+<h2>Ohi Orders a car</h2>
+
+<form>
+    <label for="electric">electric </label>
+    <input type ="checkbox" id="electric" name="electric" > <br>
+
+    <label for="ac">AC</label>
+    <input type ="checkbox" id="ac" name="ac" > <br>
+
+    <label for="gps">GPS </label>
+    <input type ="checkbox" id="gps" name="gps" > <br>
+
+    <input type="button" onclick="ordercar()" value="Order a car">
+</form>
+
+
+<p id="thisResult">This text will be replaced </p>
+
+<script> 
+    my_car = {}
+    
+    function ordercar(){
+        console.log("Getting form values")
+        electric = document.getElementById("electric").value
+      
+        my_car = {"electric":electric, "ac":ac, "gps":gps}
+        out = document.getElementById("result")
+        out.innerHTML = JSON.stringify(my_car)
+    }
