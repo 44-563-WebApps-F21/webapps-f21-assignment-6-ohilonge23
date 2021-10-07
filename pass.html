@@ -40,5 +40,44 @@ function processPhrase() {
 }
 </script>
 
+
+<p id="result">Image slideshow below: </p>
+
+
+<div class="container">
+    <img src="elephant2.jpg" class= "img-circle" alt="This is an elephant" width="200" height="200" onclick="newImage()" id="thisImage"/>
+</div>
+
+<script>
+
+    function warningLock(){
+        warning("This account has been LOCKED")
+        btn=document.getElementById("passBTN")
+        btn.disabled = true
+    }
+
+    var usingImage = 1
+    function newImage(){
+        getImg = document.getElementById("thisImage")
+        switch (usingImage) {
+            case 1:
+            getImg.src = "elephant2.jpg";
+                usingImage += 1;
+                break;
+            case 2:
+                getImg.src = "hawk.jpg";
+                usingImage += 1;
+                break;
+            case 3:
+                getImg.src = "lion2.jpg";
+                usingImage = 1
+                break;
+        }
+    }
+
+
+</script>
+
+
 </body>
-</html> 
+</html>
